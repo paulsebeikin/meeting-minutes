@@ -4,16 +4,24 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "test": "cross-env NODE_ENV=test jest --forceExit --verbose",
+    "pretest": "cross-env NODE_ENV=test npm run reset",
     "dev": "nodemon",
     "migrate:reset": "sequelize db:migrate:undo:all && sequelize db:migrate",
     "seed": "sequelize db:seed:all",
-    "reset": "npm run migrate:reset && npm run seed",    
+    "reset": "npm run migrate:reset && npm run seed",
     "start": "npm run reset && node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulsebeikin/meeting-minutes"
+  },
   "author": "Paul Sebeikin",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "dotenv": "^8.2.0"
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "jest": "^25.4.0"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
