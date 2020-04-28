@@ -7,7 +7,8 @@
     "dev": "nodemon",
     "migrate:reset": "sequelize db:migrate:undo:all && sequelize db:migrate",
     "seed": "sequelize db:seed:all",
-    "reset": "npm run migrate:reset && npm run seed"
+    "reset": "npm run migrate:reset && npm run seed",    
+    "start": "npm run reset && node server.js"
   },
   "author": "Paul Sebeikin",
   "license": "ISC",
