@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    flex-direction: column;    
+}
+
+.list-item{
+    font-weight: bold;
+    border: rgba(0,0,0,0.1) solid 1px;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 9px;
+    box-shadow: 2px 1px rgba(0,0,0,0.1);    
+}
+
+main {
+    padding-top: 1rem;
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+}
+
+.flash li {
+    list-style: none;
+}
+
+.flash ul {
+    padding: 0;
+    margin: 0;
+}

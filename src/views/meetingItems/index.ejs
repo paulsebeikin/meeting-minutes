@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include("../partials/head") %>
+    </head>
+    
+    <body>
+        <header>
+            <%- include("../partials/header") %>     
+            <%- include("../partials/flash") %>                        
+        </header>  
+        <main class="container">
+
+            <div class="row">                
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="col-sm" style="height: 10%;">
+                            <a class="btn btn-primary" href="/meetings/new" role="button">New</a>                            
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <div class="col-sm" style="height: 10%;">
+                                <a class="btn btn-primary" href="/meetings/<%= meeting.id %>/meetingItems/new" role="button">New</a>                        
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm bg-warning" style="height: 90%;"></div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+
+        </main>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include("../partials/head") %>
+    </head>
+    
+    <body>
+        <header>
+            <%- include("../partials/header") %>     
+            <%- include("../partials/flash") %>            
+        </header>  
+        <main class="container">
+          <div class="row">                        
+              <form class="col-md-12 d-flex" method="POST" action="/meetings">
+
+                <div id="meetingItemList" class="col-md-4 list-group-flush">
+                  <h5>Previous Meeting Items</h5>
+                  <% meetingItems.forEach(meetingItem => { %>                    
+                    <a data-meetingType="<%= meetingItem.meeting.meetingTypeId %>" href="#" class="list-group-item-action">                       
+                      <div class="d-flex flex-wrap justify-content-between list-item">
+                        <div class="d-flex">
+                          <input type="checkbox" name="meeting[items]" value="<%= meetingItem.id %>">                    
+                          <h5 class="mb-1 ml-2"><%= meetingItem.item.name %></h5>                                                                
+                        </div>                    
+                        <small><%= meetingItem.status.name %></small>                             
+                      </div>                      
+                    </a>
+                  <% }) %>
+                </div>
+
+                <div class="col-md-8">
+                  <h4>New Meeting</h4>
+                  <div class="form-group">
+                    <label for="meeting[date]">Date</label>
+                    <input type="date" class="form-control" name="meeting[date]">
+                  </div>
+                  <div class="form-group">
+                    <label for="meeting[type]">Type</label>
+                    <select id="typeSelector" class="form-control" name="meeting[meetingTypeId]">         
+                      <option value="-1" selected >Choose a meeting type...</option>           
+                      <% meetingTypes.forEach(meetingType => { %>
+                        <option value="<%= meetingType.id %>"><%= meetingType.type %></option>  
+                      <% }) %>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+              </form>        
+          </div>            
+        </main>
+        <script src="/scripts/main.js"></script>
+    </body>
+</html>

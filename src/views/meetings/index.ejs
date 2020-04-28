@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include("../partials/head") %>
+    </head>
+    
+    <body>
+        <header>
+            <%- include("../partials/header") %>     
+            <%- include("../partials/flash") %>                        
+        </header>  
+        <main class="container">
+
+            <%- include("../partials/meetingTable", meetings) %>
+
+        </main>
+    </body>
+</html>
